@@ -1,6 +1,6 @@
 import { createApp } from "vue";
-import App from "./App.vue";
+import ReadMore from "./ReadMoreComponent.vue";
 
 import "./assets/main.css";
 
-createApp(App).mount("#app");
+createApp(ReadMore).mount("#read-more-text");
