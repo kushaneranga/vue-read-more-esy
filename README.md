@@ -1,3 +1,3 @@
 <p align="center">
-  <a href="#" target="_blank" rel="vue read more"><img src="![alt text](https://github.com/[kushaneranga]/[vue-read-more-esy]/blob/[feature/readme]/public/CoverImg.png?raw=true)" alt="my banner"></a>
+  <a href="#" target="_blank" rel="vue read more"><img src="![Frame 1(1)](https://user-images.githubusercontent.com/61194721/216811772-00f701c8-47f8-4ee5-9909-2ac9e152c3b8.png)" alt="my banner"></a>
 </p>
