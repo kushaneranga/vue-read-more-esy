@@ -1,6 +1,6 @@
 <template>
-  <div v-if="longText" class="about-the-gallery">
-    <div class="primary-color-text s-gallery-text">
+  <div v-if="longText" class="">
+    <div class="">
       <p v-if="!readMoreActivated && !isLongText">
         <span v-html="longText"></span>
       </p>
@@ -10,7 +10,7 @@
       <p v-if="readMoreActivated"><span v-html="longText"></span></p>
     </div>
     <div class="read_more-link">
-      <div class="primary-color-text s-gallery-text">
+      <div class="">
         <div v-if="!readMoreActivated && isLongText" @click="activateReadMore">
           {{ readmore }}
         </div>
@@ -35,8 +35,7 @@ export default {
   props: {
     longtextdata: {
       type: String,
-      default:
-        "dadadasdadasdadas dassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdassdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadasdadadasdadasdadasdas sdasdasdasdasdasdaseddasdasdasdasdasdasdasdasdasddsadadas",
+      default: "",
     },
     readmore: {
       type: String,
@@ -54,7 +53,6 @@ export default {
           .slice(0, this.mobileSize)
           .replace(/(<([^>]+)>)/gi, "")
           .match(/.*?[\\ !?]/g);
-        console.warn(str);
         let nstr = str.join("").slice(0, -1);
         return nstr ? nstr : this.longText.slice(0, this.mobileSize);
       }
@@ -63,7 +61,6 @@ export default {
           .slice(0, this.tabSize)
           .replace(/(<([^>]+)>)/gi, "")
           .match(/.*?[\\ !?]/g);
-        console.warn(str);
         let nstr = str.join("").slice(0, -1);
         return nstr ? nstr : this.longText.slice(0, this.tabSize);
       }
@@ -71,7 +68,6 @@ export default {
         .slice(0, this.desktopSize)
         .replace(/(<([^>]+)>)/gi, "")
         .match(/.*?[\\ !?]/g);
-      console.warn(str);
       let nstr = str.join("").slice(0, -1);
       return nstr ? nstr : this.longText.slice(0, this.desktopSize);
     },
@@ -98,9 +94,7 @@ export default {
     this.$nextTick(() => {
       window.addEventListener("resize", this.onResize);
     });
-    console.log(this.readmore);
     let longtextdata = this.longtextdata;
-    console.log(longtextdata);
     this.longText = longtextdata;
   },
   beforeUnmount() {
