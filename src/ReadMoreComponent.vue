@@ -46,37 +46,51 @@ export default {
       type: String,
       default: "Read less",
     },
+    mobMediaQuarrySize: {
+      type: Number,
+      default: 480,
+    },
+    tabMediaQuarrySize: {
+      type: Number,
+      default: 992,
+    },
   },
   computed: {
     shortText: function () {
-      if (this.windowWidth < 480) {
+      if (this.windowWidth < this.mobMediaQuarrySize) {
         let str = this.longText
           .slice(0, this.mobileSize)
           .replace(/(<([^>]+)>)/gi, "")
           .match(/.*?[\\ !?]/g);
-        let nstr = str.join("").slice(0, -1);
-        return nstr ? nstr : this.longText.slice(0, this.mobileSize);
+        let shortContent = str.join("").slice(0, -1);
+        return shortContent
+          ? shortContent
+          : this.longText.slice(0, this.mobileSize);
       }
-      if (this.windowWidth < 992) {
+      if (this.windowWidth < this.tabMediaQuarrySize) {
         let str = this.longText
           .slice(0, this.tabSize)
           .replace(/(<([^>]+)>)/gi, "")
           .match(/.*?[\\ !?]/g);
-        let nstr = str.join("").slice(0, -1);
-        return nstr ? nstr : this.longText.slice(0, this.tabSize);
+        let shortContent = str.join("").slice(0, -1);
+        return shortContent
+          ? shortContent
+          : this.longText.slice(0, this.tabSize);
       }
       let str = this.longText
         .slice(0, this.desktopSize)
         .replace(/(<([^>]+)>)/gi, "")
         .match(/.*?[\\ !?]/g);
-      let nstr = str.join("").slice(0, -1);
-      return nstr ? nstr : this.longText.slice(0, this.desktopSize);
+      let shortContent = str.join("").slice(0, -1);
+      return shortContent
+        ? shortContent
+        : this.longText.slice(0, this.desktopSize);
     },
     isLongText: function () {
-      if (this.windowWidth < 480) {
+      if (this.windowWidth < this.mobMediaQuarrySize) {
         return this.longText.length > this.mobileSize;
       }
-      if (this.windowWidth < 992) {
+      if (this.windowWidth < this.tabMediaQuarrySize) {
         return this.longText.length > this.tabSize;
       }
       return this.longText.length > this.desktopSize;
