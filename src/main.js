@@ -1,6 +1,4 @@
 import { createApp } from "vue";
-// import ReadMore from "./ReadMoreComponent.vue";
-import Main from "./Main.vue";
+import DemoPage from "./Main.vue";
 
-// createApp(ReadMore).mount("read-more");
-createApp(Main).mount("read-more");
+createApp(DemoPage).mount("read-more");

@@ -29,14 +29,13 @@ export default {
     return {
       longText: "",
       readMoreActivated: false,
-      windowWidth: window.innerWidth,
+      // windowWidth: window.innerWidth,
     };
   },
   props: {
     longTextData: {
       type: String,
-      default:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit, interdum ac sapien ut, dapibus fermentum purus. In sit amet finibus ante, eu facilisis nisi. Suspendisse elit orci, facilisis a suscipit lacinia, placerat vel est. Proin molestie semper dolor, eget volutpat massa rutrum vitae. Suspendisse finibus facilisis lectus ac commodo. Integer iaculis, ex et fringilla porta, mi ipsum volutpat nisi, et consectetur urna erat a augue. Praesent ligula mi, blandit ut efficitur eu, blandit a nisi. Integer sed mattis dolor, ut efficitur justo. Curabitur mollis quam eros, ut tempus felis gravida ut. In posuere facilisis odio, sed interdum est gravida sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus augue sapien, malesuada at lacus placerat, lobortis cursus risus. Nulla vitae elementum sapien. Nullam nec nulla ac metus varius scelerisque. Duis non diam quis libero tincidunt sollicitudin.",
+      default: "",
     },
     readMore: {
       type: String,
@@ -53,6 +52,9 @@ export default {
     tabMediaQuarrySize: {
       type: Number,
       default: 992,
+    },
+    windowWidth: {
+      type: [Number, String],
     },
   },
   computed: {
@@ -123,6 +125,7 @@ export default {
       this.readMoreActivated = false;
     },
     onResize() {
+      // eslint-disable-next-line vue/no-mutating-props
       this.windowWidth = window.innerWidth;
     },
   },
