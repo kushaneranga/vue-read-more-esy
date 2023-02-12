@@ -11,7 +11,7 @@
 ## Table of Contents
 1. [Install](#install)
 
-<h2 align="center">Install</h2>
+<h2>Install</h2>
 
 Install with npm:
 
