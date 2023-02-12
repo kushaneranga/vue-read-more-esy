@@ -37,6 +37,7 @@ export default {
       type: String,
       default:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit, interdum ac sapien ut, dapibus fermentum purus. In sit amet finibus ante, eu facilisis nisi. Suspendisse elit orci, facilisis a suscipit lacinia, placerat vel est. Proin molestie semper dolor, eget volutpat massa rutrum vitae. Suspendisse finibus facilisis lectus ac commodo. Integer iaculis, ex et fringilla porta, mi ipsum volutpat nisi, et consectetur urna erat a augue. Praesent ligula mi, blandit ut efficitur eu, blandit a nisi. Integer sed mattis dolor, ut efficitur justo. Curabitur mollis quam eros, ut tempus felis gravida ut. In posuere facilisis odio, sed interdum est gravida sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus augue sapien, malesuada at lacus placerat, lobortis cursus risus. Nulla vitae elementum sapien. Nullam nec nulla ac metus varius scelerisque. Duis non diam quis libero tincidunt sollicitudin.",
+      required: true,
     },
     readMore: {
       type: String,
@@ -48,11 +49,23 @@ export default {
     },
     mobMediaQuarrySize: {
       type: Number,
-      default: 480,
+      default: 576,
     },
     tabMediaQuarrySize: {
       type: Number,
       default: 992,
+    },
+    mobileSizePre: {
+      type: Number,
+      default: 0.5,
+    },
+    tabSizePre: {
+      type: Number,
+      default: 0.5,
+    },
+    deskSizePre: {
+      type: Number,
+      default: 0.5,
     },
   },
   computed: {
@@ -96,13 +109,13 @@ export default {
       return this.longText.length > this.desktopSize;
     },
     mobileSize: function () {
-      return ((this.windowWidth - 40) / 3.2).toFixed(0) * 3;
+      return (this.windowWidth * this.mobileSizePre).toFixed(0);
     },
     tabSize: function () {
-      return ((this.windowWidth - 40) / 14).toFixed(0) * 3;
+      return (this.windowWidth * this.tabSizePre).toFixed(0);
     },
     desktopSize: function () {
-      return ((this.windowWidth - 120) / 10).toFixed(0) * 3;
+      return (this.windowWidth * this.deskSizePre).toFixed(0);
     },
   },
   mounted() {
