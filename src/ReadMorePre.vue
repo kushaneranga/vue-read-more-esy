@@ -78,7 +78,7 @@ export default {
           .match(/.*?[\\ !?]/g);
         const shortContent = str.join("").slice(0, -1);
         return shortContent ? shortContent : this.longText.slice(0, size);
-      }
+      };
       if (this.windowWidth < this.mobMediaQuarrySize) {
         return getShortText(sizes[0]);
       } else if (this.windowWidth < this.tabMediaQuarrySize) {
