@@ -70,34 +70,22 @@ export default {
   },
   computed: {
     shortText: function () {
+      const sizes = [this.mobileSizeVal, this.tabSizeVal, this.deskSizeVal];
+      const getShortText = (size) => {
+        const str = this.longText
+          .slice(0, size)
+          .replace(/(<([^>]+)>)/gi, "")
+          .match(/.*?[\\ !?]/g);
+        const shortContent = str.join("").slice(0, -1);
+        return shortContent ? shortContent : this.longText.slice(0, size);
+      }
       if (this.windowWidth < this.mobMediaQuarrySize) {
-        let str = this.longText
-          .slice(0, this.mobileSizeVal)
-          .replace(/(<([^>]+)>)/gi, "")
-          .match(/.*?[\\ !?]/g);
-        let shortContent = str.join("").slice(0, -1);
-        return shortContent
-          ? shortContent
-          : this.longText.slice(0, this.mobileSizeVal);
+        return getShortText(sizes[0]);
+      } else if (this.windowWidth < this.tabMediaQuarrySize) {
+        return getShortText(sizes[1]);
+      } else {
+        return getShortText(sizes[2]);
       }
-      if (this.windowWidth < this.tabMediaQuarrySize) {
-        let str = this.longText
-          .slice(0, this.tabSizeVal)
-          .replace(/(<([^>]+)>)/gi, "")
-          .match(/.*?[\\ !?]/g);
-        let shortContent = str.join("").slice(0, -1);
-        return shortContent
-          ? shortContent
-          : this.longText.slice(0, this.tabSizeVal);
-      }
-      let str = this.longText
-        .slice(0, this.deskSizeVal)
-        .replace(/(<([^>]+)>)/gi, "")
-        .match(/.*?[\\ !?]/g);
-      let shortContent = str.join("").slice(0, -1);
-      return shortContent
-        ? shortContent
-        : this.longText.slice(0, this.deskSizeVal);
     },
     isLongText: function () {
       if (this.windowWidth < this.mobMediaQuarrySize) {
