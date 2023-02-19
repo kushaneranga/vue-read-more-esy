@@ -69,7 +69,6 @@ export default {
   },
   computed: {
     shortText: function () {
-      const sizes = [this.mobileSize, this.tabSize, this.desktopSize];
       const getShortText = (size) => {
         const str = this.longText
           .slice(0, size)
@@ -79,11 +78,11 @@ export default {
         return shortContent ? shortContent : this.longText.slice(0, size);
       };
       if (this.windowWidth < this.mobMediaQuarrySize) {
-        return getShortText(sizes[0]);
+        return getShortText(this.mobileSize);
       } else if (this.windowWidth < this.tabMediaQuarrySize) {
-        return getShortText(sizes[1]);
+        return getShortText(this.tabSize);
       } else {
-        return getShortText(sizes[2]);
+        return getShortText(this.desktopSize);
       }
     },
     isLongText: function () {
