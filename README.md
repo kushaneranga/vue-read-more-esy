@@ -115,7 +115,7 @@ ReadMoreVal props:
 | tabSizeVal        | Number        | 200                | Maximum number of characters that should appear on the <b>Tab</b> screen.                                                                                                                 |
 | deskSizeVal       | Number        | 300                | Maximum number of characters that should appear on the <b>Desktop</b> screen.                                                                                                  |
 
-<h1 id="custom-example">Custom Example:</h1>
+<h2 id="custom-example">Custom Example:</h2>
 
 ```vue
 <ReadMoreVal
