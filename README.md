@@ -9,9 +9,11 @@
 </div>
 
 ## Table of Contents
-1. [Install](#install)
+1. [Setup](#setup)
+3. [How to use](#how-to-use)
+4. [Props](#props)
 
-<h2>Setup</h2>
+<h2 id="setup">Setup</h2>
 
 Install with npm:
 
@@ -19,7 +21,7 @@ Install with npm:
 npm i vue-read-more-esy
 ```
 
-<h2>How to use</h2>
+<h2 id="how-to-use">How to use</h2>
 
 This allows you to break text with common punctuations like space, dot ('.'), exclamation mark ('!'), and question mark ('?'). Breaking text with these characters creates a visually appealing and easy-to-read layout for displaying lengthy text content.
 
@@ -55,7 +57,7 @@ Add the global component to your `App.vue`:
 <ReadMoreVal longTextData="Lorem.ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit,....."/>
 ```
 
-<h2>Props</h2>
+<h2 id="props">Props</h2>
 
 Note that all props are optional.
 
