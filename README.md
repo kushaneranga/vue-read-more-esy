@@ -39,7 +39,7 @@ Vue.use(ReadMorePre)
 Add the global component to your `App.vue`:
 
 ```vue
-<ReadMorePre longTextData="Lorem.ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit,....."/>
+<ReadMorePre longTextData="Lorem.ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit,....."><ReadMorePre/>
 ```
 
 You want to handle number of characters:
@@ -54,7 +54,34 @@ Vue.use(ReadMoreVal)
 Add the global component to your `App.vue`:
 
 ```vue
-<ReadMoreVal longTextData="Lorem.ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit,....."/>
+<ReadMoreVal longTextData="Lorem.ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit,....."><ReadMorePre/>
+```
+
+<p><b>Use the component directly:</b></p>
+
+```html
+<!-- read-more.vue -->
+<template>
+  <ReadMorePre longTextData="Lorem.ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit,....."><ReadMorePre/>
+
+  <!-- Or -->
+
+  <ReadMoreVal longTextData="Lorem.ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit,....."><ReadMoreVal/>
+</template>
+
+<script>
+  import { ReadMorePre } from 'vue-read-more-pre';
+  // Or
+  import { ReadMoreVal } from 'vue-read-more-val';
+
+  export default {
+    components: {
+      ReadMorePre,
+      // Or
+      ReadMoreVal.
+    },
+  };
+</script>
 ```
 
 <h2 id="props">Props</h2>
