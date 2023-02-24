@@ -73,7 +73,7 @@ export default {
         const str = this.longText
           .slice(0, size)
           .replace(/(<([^>]+)>)/gi, "")
-          .match(/.*?[\\ !?]/g);
+          .match(/.*?[\\ .!?]/g);
         const shortContent = str.join("").slice(0, -1);
         return shortContent ? shortContent : this.longText.slice(0, size);
       };
