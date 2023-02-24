@@ -12,6 +12,7 @@
 1. [Setup](#setup)
 3. [How to use](#how-to-use)
 4. [Props](#props)
+5. [Custom Example](#custom-example)
 
 <h2 id="setup">Setup</h2>
 
@@ -113,3 +114,37 @@ ReadMoreVal props:
 | mobileSizeVal     | Number        | 100                | Maximum number of characters that should appear on the <b>mobile</b> screen.                                                                                                              |
 | tabSizeVal        | Number        | 200                | Maximum number of characters that should appear on the <b>Tab</b> screen.                                                                                                                 |
 | deskSizeVal       | Number        | 300                | Maximum number of characters that should appear on the <b>Desktop</b> screen.                                                                                                  |
+
+<h1 id="custom-example">Custom Example:</h1>
+
+```vue
+<ReadMoreVal
+  longTextData="
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit, interdum ac sapien ut, dapibus fermentum purus. In sit amet finibus ante, eu facilisis nisi. Suspendisse elit orci, facilisis a suscipit lacinia, placerat vel est. Proin molestie semper dolor, eget volutpat massa rutrum vitae. Suspendisse finibus facilisis lectus ac commodo.
+  "
+  readMore="See more"
+  readLess="See less"
+  :mobMediaQuarrySize="575"
+  :tabMediaQuarrySize="767"
+  :mobileSizeVal="80"
+  :tabSizeVal="180"
+  :deskSizeVal="280"
+>
+</ReadMoreVal>
+
+<!-- Or -->
+
+<ReadMorePre
+  longTextData="
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus elit, interdum ac sapien ut, dapibus fermentum purus. In sit amet finibus ante, eu facilisis nisi. Suspendisse elit orci, facilisis a suscipit lacinia, placerat vel est. Proin molestie semper dolor, eget volutpat massa rutrum vitae. Suspendisse finibus facilisis lectus ac commodo.
+  "
+  readMore="See more"
+  readLess="See less"
+  :mobMediaQuarrySize="575"
+  :tabMediaQuarrySize="767"
+  :mobileSizePre="0.3"
+  :tabSizePre="0.5"
+  :deskSizePre="0.4"
+>
+</ReadMorePre>
+```
